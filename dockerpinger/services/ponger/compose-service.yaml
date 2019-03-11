@@ -1,0 +1,12 @@
+version: "2.3"
+
+services:
+  ponger:
+    build:
+      context: ../
+      dockerfile: ponger/Dockerfile
+    environment:
+      - KAFKA_URL=kafka
+      - KAFKA_PORT=9092
+
+

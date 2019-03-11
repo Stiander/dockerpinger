@@ -1,0 +1,23 @@
+version: "2.3"
+
+services:
+
+  kafka:
+    extends:
+      file: services/kafka/compose-service.yaml
+      service: kafka
+
+  pinger:
+    extends:
+      file: services/pinger/compose-service.yaml
+      service: pinger
+    depends_on:
+      - kafka
+      
+  ponger:
+    extends:
+      file: services/ponger/compose-service.yaml
+      service: ponger
+    depends_on:
+      - kafka
+

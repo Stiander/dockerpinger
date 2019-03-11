@@ -1,0 +1,12 @@
+version: "2.3"
+
+services:
+  pinger:
+    build:
+      context: ../
+      dockerfile: pinger/Dockerfile
+    environment:
+      - KAFKA_URL=kafka
+      - KAFKA_PORT=9092
+
+

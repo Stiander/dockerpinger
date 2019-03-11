@@ -1,0 +1,15 @@
+version: "2.3"
+
+services:
+  kafka:
+    image: broentech/kafka-broker
+    ports:
+      - "9092:9092"
+      - "2181:2181"
+    environment:
+      - ADVERTISED_HOST=kafka
+      - ADVERTISED_PORT=9092
+      - KAFKA_ADVERTISED_HOST_NAME=kafka
+      - AUTO_CREATE_TOPICS=true
+      # - TOPICS=
+    container_name: kafka
